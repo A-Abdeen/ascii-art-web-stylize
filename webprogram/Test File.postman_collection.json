@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "c0742c88-e528-48c0-af61-2aa36aada84f",
+		"name": "ASCII Art Web",
+		"description": "This collection of requests is meant to test request cases for the ASCII Art Web project.\n\nThe collection includes a total of 8 request: 3 GET requests & 5 POST requests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test GET request on GET route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Root loading successful - Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				},
+				"description": "Test loading main page"
+			},
+			"response": []
+		},
+		{
+			"name": "Test GET request on POST route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Route does not allow GET method - Status code 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test access to non-existing route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Page Not Found - status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"a"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "ABCD",
+							"disabled": true
+						},
+						{
+							"key": "banner",
+							"value": "standard",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test POST request on POST route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart?input=ABCD&banner=standard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "ABCD"
+						},
+						{
+							"key": "banner",
+							"value": "standard"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test incomplete POST request - Text",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST request missing input text - status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart?banner=standard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "ABCD",
+							"disabled": true
+						},
+						{
+							"key": "banner",
+							"value": "standard"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test incomplate POST request - Banner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST request missing banner - status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart?input=ABCD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "ABCD"
+						},
+						{
+							"key": "banner",
+							"value": "standard",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test POST request - non existing Banner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST request using wrong Banner - status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart?input=ABCD&banner=internal error",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "ABCD"
+						},
+						{
+							"key": "banner",
+							"value": "internal error"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test POST request - unsupported text input",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST request using unsupported text input - status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/asciiart?input=تست&banner=standard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asciiart"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "تست"
+						},
+						{
+							"key": "banner",
+							"value": "standard"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
