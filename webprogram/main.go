@@ -11,7 +11,6 @@ import (
 
 type Art struct {
 	Output string
-	mainerror error
 }
 
 func main() {
@@ -26,12 +25,8 @@ func main() {
 
 func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
-		mainerror = err
-		er, err := template.ParseFiles("templates/error")
-		if err != nil {
-			log.Fatal(err)
-		}
-		er.Execute(w, mainerror)
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
 	}
 	if r.Method != "POST" || r.URL.Path != "/asciiart" {
 		http.Error(w, "Only POST requests are allowed.\nUse the main page to create new art", http.StatusMethodNotAllowed)
@@ -39,19 +34,18 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	inputString := r.FormValue("input")
-	if asciiart.IsAscii(inputString) {
+	if IsAscii(inputString) {
 		banner := r.FormValue("banner")
 		output := Art{Output: asciiart.AsciiArt(inputString, banner)}
 		if strings.HasPrefix(output.Output, "500: ") {
-			// http.Error(w, "Internal Server Error: "+strings.TrimPrefix(output.Output, "500: "), http.StatusInternalServerError)
-			// return
-
+			http.Error(w, "Internal Server Error: "+strings.TrimPrefix(output.Output, "500: "), http.StatusInternalServerError)
+			return
 		}
 		if strings.HasPrefix(output.Output, "400: ") {
 			http.Error(w, "Bad Request: "+strings.TrimPrefix(output.Output, "400: "), http.StatusBadRequest)
 			return
 		}
-		t, err := template.ParseFiles("templates/template.html")
+		t, err := template.ParseFiles("template.html")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -61,3 +55,14 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func IsAscii(input string) bool {
+	for _, char := range input {
+		if char == 10 || char == 13 {
+			continue
+		}
+		if char < 32 || char > 126 {
+			return false
+		}
+	}
+	return true
+}
