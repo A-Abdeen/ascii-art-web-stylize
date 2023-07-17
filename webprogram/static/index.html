@@ -21,14 +21,29 @@
                         button {
                             background-color: rgb(85, 2, 133);
                             color: whitesmoke;
-                            border: rgb(87, 187, 177);
+                            border: rgb(0, 0, 0);
+                            border-style: solid;
+                            border-width: 3px;
                             border-radius: 20px;
                             height: 40px;
                             width: 150px;
                             font-size: 20px;
                             font-style: italic;
-                            /* font-weight: bold; */
-                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+                            font-weight: bold;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            cursor: pointer;
+                            transition: 0.2s;
+                        }
+                        button:hover{
+                            background-color: whitesmoke;
+                            color: rgb(85, 2, 133);
+                            border: rgb(85, 2, 133);
+                            border-style: solid;
+                            border-width: 3px;
+                            box-shadow: 1px 1px 3px black;
+                        }
+                        button:active{
+                            opacity: 0.5;
                         }
 
                     </style>
