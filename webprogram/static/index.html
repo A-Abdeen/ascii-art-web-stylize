@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ascii ART</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&family=Roboto+Mono:wght@200;400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div>
-            <form method="POST" action="/asciiart">
+        <div class="wrapper">
+            <div class="header">
                 <h3>
-                    <label>You write text, we draw art 👇</label><br>
+                    You write <span style="font-family: 'Roboto Mono';color:forestgreen;">text</span>, we draw<span style="font-family: 'Lilita One'; color: purple; font-size: 130%;"> ART </span>
                 </h3>
-                <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" ></textarea><br>
-                <input type="radio" id="standard" name="banner" value="standard" required="true">
-                <label for="standard">Standard</label>
-                <input type="radio" id="shadow" name="banner" value="shadow">
-                <label for="shadow">Shadow</label>
-                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
-                <label for="thinkertoy">Thinkertoy</label><br>
-                <p>
-                    <input type="submit" value="Let's go"/>
-                </p>    
+            </div>
+            <form class="form" method="POST" action="/asciiart">
+                <div class="inputs">
+                        <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" ></textarea>
+                    <div class="btns-row">
+                        <div>
+                            <div>
+
+                                <input type="radio" id="standard" name="banner" value="standard" required="true">
+                                <label for="standard">Standard</label>
+                            </div>
+                            <div>
+
+                                <input type="radio" id="shadow" name="banner" value="shadow">
+                                <label for="shadow">Shadow</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+                                <label for="thinkertoy">Thinkertoy</label>
+                            </div>
+                            <input type="submit" value="Let's go"/>  
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </body>

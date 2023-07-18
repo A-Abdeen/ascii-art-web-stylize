@@ -34,7 +34,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Bad Request: "+strings.TrimPrefix(output.Output, "400: "), http.StatusBadRequest)
 			return
 		}
-		t, err := template.ParseFiles("/Users/abdyn/Codes/ascii-art-web-stylize/webprogram/templates/template.html")
+		t, err := template.ParseFiles("templates/template.html")
 		if err != nil {
 			log.Fatal(err)
 		}
