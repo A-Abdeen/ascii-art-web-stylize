@@ -9,15 +9,44 @@
                 <h3>
                     <label>You write text, we draw art 👇</label><br>
                 </h3>
+                <style>
+                    button {
+                            background-color: rgb(85, 2, 133);
+                            color: whitesmoke;
+                            border: rgb(0, 0, 0);
+                            border-style: solid;
+                            border-width: 3px;
+                            border-radius: 20px;
+                            height: 50px;
+                            width: 200px;
+                            font-size: 20px;
+                            font-style: italic;
+                            font-weight: bold;
+                            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            cursor: pointer;
+                            transition: 0.2s;
+                        }
+                        button:hover{
+                            background-color: whitesmoke;
+                            color: rgb(85, 2, 133);
+                            border: rgb(85, 2, 133);
+                            border-style: solid;
+                            border-width: 3px;
+                            box-shadow: 1px 1px 3px black;
+                        }
+                        button:active{
+                            opacity: 0.5;
+                        }
+                </style>
                 <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" ></textarea><br>
-                <input type="radio" id="standard" name="banner" value="standard" required="true">
-                <label for="standard">Standard</label>
-                <input type="radio" id="shadow" name="banner" value="shadow">
-                <label for="shadow">Shadow</label>
-                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
-                <label for="thinkertoy">Thinkertoy</label><br>
+                <button id="standard" name="banner" value="standard" required="true">
+                <for="standard">Standard<br></button> 
+                <button id="shadow" name="banner" value="shadow">
+                <for="shadow">Shadow<br></button>
+                <button id="thinkertoy" name="banner" value="thinkertoy">
+                <for="thinkertoy">Thinkertoy<br></button>
                 <p>
-                    <style>
+                    <!-- <style>
                         button {
                             background-color: rgb(85, 2, 133);
                             color: whitesmoke;
@@ -47,9 +76,11 @@
                         }
 
                     </style>
-                    <button>Submit</button>
+                    <button>Submit</button> -->
                 </p>    
             </form>
         </div>
     </body>
 </html>
+<pre>{{ .Standard }}</pre>
+<!-- &emsp<pre>{{ Shadow. }}</pre>&emsp<pre>{{ Thinkertoy. }}</pre>  -->
