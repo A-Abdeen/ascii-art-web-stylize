@@ -9,6 +9,8 @@ import (
 )
 
 type Art struct {
+	Input  string
+	Banner string
 	Output string
 }
 
@@ -25,7 +27,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	inputString := r.FormValue("input")
 	if IsAscii(inputString) {
 		banner := r.FormValue("banner")
-		output := Art{Output: AsciiArt(inputString, banner)}
+		output := Art{Input: inputString, Banner: banner, Output: AsciiArt(inputString, banner)}
 		if strings.HasPrefix(output.Output, "500: ") {
 			http.Error(w, "Internal Server Error: "+strings.TrimPrefix(output.Output, "500: "), http.StatusInternalServerError)
 			return

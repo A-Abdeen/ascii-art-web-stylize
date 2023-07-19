@@ -19,7 +19,7 @@
             </div>
             <form class="form" method="POST" action="/asciiart">
                 <div class="inputs">
-                        <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" ></textarea>
+                        <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
                     <div class="btns-row">
                         <div>
                             <input type="radio" id="standard" name="banner" value="standard" required="true">
