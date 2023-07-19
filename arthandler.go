@@ -1,11 +1,12 @@
-package asciiart 
+package asciiart
 
-import ("strings"
-"html/template"
-"net/http"
-"fmt"
-"log")
-
+import (
+	"fmt"
+	"net/http"
+	"strings"
+	"html/template"
+	"log"
+)
 
 type Art struct {
 	Output string
@@ -31,13 +32,13 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 		if strings.HasPrefix(output.Output, "400: ") {
 			http.ServeFile(w, r, "templates/error400.html")
 		}
-		t, err := template.ParseFiles("templates/template.html")
+		t, err := template.ParseGlob("templates/*.html")
 		if err != nil {
 			log.Fatal(err)
 		}
-		t.Execute(w, output)
+		t.ExecuteTemplate(w, "template.html", output)
 	} else {
-			// fmt.Fprintf(w, "Invalid input: Only use English letters, numbers & characters")
-			http.ServeFile(w, r, "templates/error400.html")	
+		fmt.Fprintf(w, "Invalid input: Only use English letters, numbers & characters")
+		http.ServeFile(w, r, "templates/error400.html")
 	}
 }

@@ -1,0 +1,38 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto Mono';
+    background-color:darkgrey;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto
+}
+.header {
+    align-items: center;
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: 'Poppins';
+}
+form {
+    margin: inherit;
+    width: inherit;
+}
+.inputs textarea {
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+    background-color:aliceblue;
+}
+.inputs .btns-row {
+    margin-left: 36%;
+    margin-right: 36%;
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 1px;
+}
