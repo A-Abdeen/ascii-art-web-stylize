@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+
 func main() {
 	http.HandleFunc("/", asciiart.Readfile)
 	http.HandleFunc("/asciiart", asciiart.ArtHandler)

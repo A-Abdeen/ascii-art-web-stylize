@@ -10,6 +10,9 @@ import (
 
 type Art struct {
 	Output string
+	Standard string
+	Shadow string
+	Thinkertoy string
 }
 
 func ArtHandler(w http.ResponseWriter, r *http.Request) {
@@ -25,7 +28,8 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	inputString := r.FormValue("input")
 	if IsAscii(inputString) {
 		banner := r.FormValue("banner")
-		output := Art{Output: AsciiArt(inputString, banner)}
+		output := Art{Output: AsciiArt(inputString, banner), Standard: AsciiArt("standard", "standard"), Shadow: AsciiArt("shadow", "shadow"), Thinkertoy: AsciiArt("thinkertoy", "thinkertoy")}
+	
 		if strings.HasPrefix(output.Output, "500: ") {
 			http.ServeFile(w, r, "templates/error500.html")
 		}
@@ -37,7 +41,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 			log.Fatal(err)
 		}
 		t.ExecuteTemplate(w, "template.html", output)
-	} else {
+	  } else {
 		fmt.Fprintf(w, "Invalid input: Only use English letters, numbers & characters")
 		http.ServeFile(w, r, "templates/error400.html")
 	}
