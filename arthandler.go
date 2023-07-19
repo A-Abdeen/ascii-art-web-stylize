@@ -28,15 +28,16 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	inputString := r.FormValue("input")
 	if IsAscii(inputString) {
 		banner := r.FormValue("banner")
-		output := Art{Output: AsciiArt(inputString, banner), Standard: AsciiArt("standard", "standard"), Shadow: AsciiArt("shadow", "shadow"), Thinkertoy: AsciiArt("thinkertoy", "thinkertoy")}
-	
+		output := Art{Output: AsciiArt(inputString, banner), Standard: AsciiArt("standard", "standard"),
+		 Shadow: AsciiArt("shadow", "shadow"), Thinkertoy: AsciiArt("thinkertoy", "thinkertoy")}
+
 		if strings.HasPrefix(output.Output, "500: ") {
 			http.ServeFile(w, r, "templates/error500.html")
 		}
 		if strings.HasPrefix(output.Output, "400: ") {
 			http.ServeFile(w, r, "templates/error400.html")
 		}
-		t, err := template.ParseGlob("templates/*.html")
+		t, err := template.ParseFiles("templates/template.html")
 		if err != nil {
 			log.Fatal(err)
 		}
