@@ -13,6 +13,7 @@ type Art struct {
 	Standard string
 	Shadow string
 	Thinkertoy string
+	Input string
 }
 
 func ArtHandler(w http.ResponseWriter, r *http.Request) {
@@ -29,7 +30,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	if IsAscii(inputString) {
 		banner := r.FormValue("banner")
 		output := Art{Output: AsciiArt(inputString, banner), Standard: AsciiArt("standard", "standard"),
-		 Shadow: AsciiArt("shadow", "shadow"), Thinkertoy: AsciiArt("thinkertoy", "thinkertoy")}
+		 Shadow: AsciiArt("shadow", "shadow"), Thinkertoy: AsciiArt("thinkertoy", "thinkertoy"), Input: inputString}
 
 		if strings.HasPrefix(output.Output, "500: ") {
 			http.ServeFile(w, r, "templates/error500.html")
