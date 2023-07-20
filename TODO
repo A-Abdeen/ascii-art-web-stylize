@@ -1,16 +1,36 @@
-[x] Change banner chooser
-    Change from radio to button
-[ ] Create merge branch
-    Experimental merging to bring all changes together and test them before merging to master
-[ ] Use one template
-    The handlers will parse and execute single HTML file to load both the main page and the results page
-[ ] Change buttons behavior
-    The buttons will execute the program and remain active on click
-[ ] Create header link
-    Make the header clickable and direct it to the main page
-[ ] Responsive design
-    Test the design on different screen sizes
-[ ] Add separate page elements
-    Create header and footer template files and inject them into template and error pages
-[ ] Google pallette
-    Replicate Google's look in sense of color and shape
+
+Each of the main below need to be done in seperate branches from the develop branch, then tested and merged back.
+
+
+IN PROGRESS
+    [ ] Separate page elements // ABDEEN
+        Create header and footer template files and inject them into template and error pages
+            [ ] Create header link
+                Make the header clickable and direct it to the main page
+
+PENDING
+    [ ] Button component
+        Adjust design and size
+    [ ] Change buttons behavior
+        The buttons will execute the program and remain active on click
+    [ ] Add output box
+        Create css layout for output
+            [ ] Add text color picker
+                Output color is frontend display function
+            [ ] Add background color picker
+                Output background color to be changed on frontend only
+    [ ] Google pallette
+        Replicate Google's look in sense of color and shape
+    [ ] Responsive design
+        Test the design on different screen sizes and adjust accordingly
+    [ ] Test and refactor
+
+COMPLETED
+    [x] Change banner chooser // ABDEEN
+        Change from radio to button
+    [x] Implement banner sample // ALALI
+        Export sample of each banner type and inject it as button value
+    [x] Create merge branch // ABDEEN
+        Experimental merging to bring all changes together and test them before merging to master
+    [x] Use one template // ALALI
+        The handlers will parse and execute single HTML file to load both the main page and the results page
