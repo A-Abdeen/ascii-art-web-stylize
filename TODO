@@ -1,24 +1,25 @@
 
 Each of the main below need to be done in seperate branches from the develop branch, then tested and merged back.
 
-
 IN PROGRESS
     [ ] Separate page elements // ABDEEN
         Create header and footer template files and inject them into template and error pages
             [ ] Create header link
                 Make the header clickable and direct it to the main page
+            [ ] Handle all errors using templates
+                Create single HTML file and unify error handling code
+    [ ] Add output box // ALALI
+        Create css layout for output
+            [ ] Add text color picker
+                Output color is frontend display function
+            [ ] Add background color picker
+                Output background color to be changed on frontend only
 
 PENDING
     [ ] Button component
         Adjust design and size
     [ ] Change buttons behavior
         The buttons will execute the program and remain active on click
-    [ ] Add output box
-        Create css layout for output
-            [ ] Add text color picker
-                Output color is frontend display function
-            [ ] Add background color picker
-                Output background color to be changed on frontend only
     [ ] Google pallette
         Replicate Google's look in sense of color and shape
     [ ] Responsive design
@@ -34,3 +35,11 @@ COMPLETED
         Experimental merging to bring all changes together and test them before merging to master
     [x] Use one template // ALALI
         The handlers will parse and execute single HTML file to load both the main page and the results page
+
+        BUG
+        HACK
+        FIXME
+        TODO
+        XXX
+        [ ]
+        [x]
