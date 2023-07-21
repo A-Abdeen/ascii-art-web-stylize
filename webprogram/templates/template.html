@@ -58,7 +58,7 @@ button {
     height: 150px;
     width: 450px;
     font-size: 1.1rem;
-    font-weight: normal;
+    font-weight: 900;
     font-family:'Roboto Mono';
     cursor: pointer;
     transition: 0.2s;
@@ -70,7 +70,7 @@ button:hover{
     border-style: solid;
     border-width: 1px;
     box-shadow: 1px 1px 3px black;
-    font-weight: bolder;
+    font-weight: 900;
 }
 button:focus{
     opacity: 0.5;
@@ -100,18 +100,15 @@ button:focus{
 
                                 <button id="thinkertoy" name="banner" value="thinkertoy">
                                 <label for="thinkertoy"><pre>{{ .Thinkertoy }}</pre></button>
-
+<input type="color"; name="color"; value= "{{ .Color }}"> 
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </body>
-    <style>
-    output pre {
-        height: 1200px;
-        width: 2100px;
-    }
-</style>
-</html><div  class="output">
-<pre>{{ .Output }}</pre></div>
+<pre style=" height: 300px; font-size:xx-large
+; width:98.8%; text-align: center; border:10px solid rgb(255, 0, 0); border-radius: 20px; background:ivory; color:{{ .Color }}">
+    {{ .Output }}
+</pre>
+</html>
