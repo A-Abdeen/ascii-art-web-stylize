@@ -75,7 +75,13 @@ button:hover{
 button:focus{
     opacity: 0.5;
     background-color: whitesmoke;
-    color: forestgreen
+    color: forestgreen;
+}
+.colorpicker {
+    margin-left: 35%;
+    margin-right: 35%;
+    font-size: xx-large;
+    background-color: aliceblue;
 }
 
     </style>
@@ -89,7 +95,11 @@ button:focus{
             <form class="form" method="POST" action="/asciiart">
                 <div class="inputs">
                         <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
-                    <div class="btns-row">
+                    <div class="colorpicker">
+                        <label>Pick a color</label>
+                        <input type="color"; name="color"; value= {{ .Color }}></div>
+                        </div>
+                        <div class="btns-row">
                         <div>
                                 <button id="standard" name="banner" value="standard" required="true">
                                 <label for="standard"><pre>{{ .Standard }}</pre></button>
@@ -100,15 +110,14 @@ button:focus{
 
                                 <button id="thinkertoy" name="banner" value="thinkertoy">
                                 <label for="thinkertoy"><pre>{{ .Thinkertoy }}</pre></button>
-<input type="color"; name="color"; value= "{{ .Color }}"> 
-                        </div>
+                
                     </div>
                 </div>
             </form>
         </div>
     </body>
-<pre style=" height: 300px; font-size:xx-large
-; width:98.8%; text-align: center; border:10px solid rgb(255, 0, 0); border-radius: 20px; background:ivory; color:{{ .Color }}">
+<pre style=" height: 100%; font-size:xx-large
+; width:100%; text-align: center; border:2px solid rgb(255, 0, 0); border-radius: 20px; background:ivory; color:{{ .Color }}">
     {{ .Output }}
 </pre>
 </html>
