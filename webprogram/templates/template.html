@@ -17,7 +17,7 @@
 body {
     margin: 0;
     font-family: 'Roboto Mono';
-    background-color:darkgrey;
+    background-color:rgb(167, 191, 194);
 }
 .wrapper {
     /* max-width: 1200px; */
@@ -43,7 +43,7 @@ form {
     margin-top: 4px;
     /* width: 100%; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     font-size: 1.2rem;
     font-weight: normal;
     padding: 1px;
@@ -55,13 +55,15 @@ button {
     border-style: solid;
     border-width: 1px;
     border-radius: 20px;
-    height: 150px;
+    height: 135px;
     width: 450px;
     font-size: 1.1rem;
     font-weight: 900;
-    font-family:'Roboto Mono';
     cursor: pointer;
     transition: 0.2s;
+    justify-content: center;
+    margin-left: 50%;
+    margin-right: 38%; 
 }
 button:hover{
     background-color: whitesmoke;
@@ -71,6 +73,7 @@ button:hover{
     border-width: 1px;
     box-shadow: 1px 1px 3px black;
     font-weight: 900;
+    cursor: pointer;
 }
 button:focus{
     opacity: 0.5;
@@ -78,9 +81,14 @@ button:focus{
     color: forestgreen;
 }
 .colorpicker {
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 40%;
+    margin-right: 30%;
     font-size: xx-large;
+    font-family: 'Lilita One';
+    justify-content: center;
+ color: forestgreen;
+}
+tbody:hover {
     background-color: aliceblue;
 }
 
@@ -89,35 +97,36 @@ button:focus{
         <div class="wrapper">
             <div class="header">
                 <h3>
-                    You write <span style="font-family: 'Roboto Mono';color:forestgreen;">text</span>, we draw<span style="font-family: 'Lilita One'; color: purple; font-size: 130%;"> ART </span>
+                    You write <span style="font-family: 'Lilita One';color:forestgreen;">text</span>, we draw<span style="font-family: 'Lilita One'; color: purple; font-size: 130%;"> ART </span>
                 </h3>
             </div>
             <form class="form" method="POST" action="/asciiart">
                 <div class="inputs">
                         <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
                     <div class="colorpicker">
-                        <label>Pick a color</label>
+                        <label>Pick   AsciiArt   color</label>
                         <input type="color"; name="color"; value= {{ .Color }}></div>
-                        </div>
-                        <div class="btns-row">
-                        <div>
+                    <div class="colorpicker">
+                          <label>Pick   background   color</label>
+                        <input type="color"; name="backColor"; value= {{ .BackColor }}>
+                    </div>
+                <div class="btns-row">
+                <div>
                                 <button id="standard" name="banner" value="standard" required="true">
-                                <label for="standard"><pre>{{ .Standard }}</pre></button>
+                                <label for="standard"><pre style="cursor:pointer">{{ .Standard }}</pre></button>
 
                                 <button id="shadow" name="banner" value="shadow">
-                                <label for="shadow"><pre>{{ .Shadow }}</pre></button>
-
+                                <label for="shadow"><pre style="cursor:pointer">{{ .Shadow }}</pre></button>
 
                                 <button id="thinkertoy" name="banner" value="thinkertoy">
-                                <label for="thinkertoy"><pre>{{ .Thinkertoy }}</pre></button>
-                
-                    </div>
+                                <label for="thinkertoy"><pre style="cursor:pointer">{{ .Thinkertoy }}</pre></button>
                 </div>
+            </div>
             </form>
         </div>
     </body>
-<pre style=" height: 100%; font-size:xx-large
-; width:100%; text-align: center; border:2px solid rgb(255, 0, 0); border-radius: 20px; background:ivory; color:{{ .Color }}">
-    {{ .Output }}
-</pre>
+            <pre style="font-size:xx-large; width: auto; text-align: center; display: inline-flex;min-width: 100%;
+border-radius: 20px; background:{{ .BackColor }};
+color:{{ .Color }}">
+{{ .Output }}</pre>
 </html>
