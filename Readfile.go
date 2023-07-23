@@ -14,9 +14,8 @@ import (
 // }
 
 func Readfile(w http.ResponseWriter, r *http.Request) {
-
-	Examples := Art{Standard: AsciiArt("standard", "standard"), Shadow: AsciiArt("shadow", "shadow"),
-	 Thinkertoy: AsciiArt("thinkertoy", "thinkertoy"), Input: "", Color: "#9141ac", BackColor: "#9c819c"}
+Examples := Art{Standard: AsciiArt("standard", "standard"), Shadow: AsciiArt("shadow", "shadow"),
+	 Thinkertoy: AsciiArt("thinkertoy", "thinkertoy"), Input: "", Color: "#9141ac", BackColor: "#a7bfc2"}
 	t, err := template.ParseFiles("templates/template.html")
 	if err != nil {
 		log.Fatal(err)
