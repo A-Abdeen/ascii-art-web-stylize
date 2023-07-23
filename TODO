@@ -8,13 +8,6 @@ IN PROGRESS
                 Make the header clickable and direct it to the main page
             [ ] Handle all errors using templates
                 Create single HTML file and unify error handling code
-    [ ] Add output box // ALALI
-        Create css layout for output
-            [ ] Add text color picker
-                Output color is frontend display function
-            [ ] Add background color picker
-                Output background color to be changed on frontend only
-
         [ ] Responsive design // ALALI
             Test the design on different screen sizes and adjust accordingly
             [ ] Button component
