@@ -80,13 +80,13 @@ button:hover{
     cursor: pointer;
 }
 button:focus{
-    opacity: 0.5;
-    background-color: whitesmoke;
+    opacity: 0.4;
+    background-color: purple(175, 36, 255);
     color: forestgreen;
 }
 .colorpicker {
     margin-left: 40%;
-    margin-right: 30%;
+    margin-right: 35%;
     font-size: xx-large;
     font-family: 'Lilita One';
     justify-content: center;
@@ -108,16 +108,16 @@ tbody:hover {
                 <div class="inputs">
                         <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
                     <div class="colorpicker">
-                        <label>Pick   AsciiArt   color</label>
+                        <label>Pick   AsciiArt   Color</label>
                         <input type="color"; name="color"; value= {{ .Color }}></div>
                     <div class="colorpicker">
-                          <label>Pick   background   color</label>
+                          <label>Pick   Background   Color</label>
                         <input type="color"; name="backColor"; value= {{ .BackColor }}>
                     </div>
                 <div class="btns-row">
                 <div>
                                 <button id="standard" name="banner" value="standard" required="true">
-                                <label for="standard"><pre style="cursor:pointer">{{ .Standard }}</pre></button>
+                                <label for="standard"><pre style="cursor:pointer; font-size: 4vm;">{{ .Standard }}</pre></button>
 
                                 <button id="shadow" name="banner" value="shadow">
                                 <label for="shadow"><pre style="cursor:pointer">{{ .Shadow }}</pre></button>
@@ -129,7 +129,7 @@ tbody:hover {
             </form>
         </div>
     </body>
-            <pre style="padding: 10px ; font-size: 0.8vw; justify-content: center; text-align: center; display: inline-flex;min-width: 100%; border-radius: 20px; background:{{ .BackColor }}; color:{{ .Color }}"> {{ .Output }}</pre>
+            <pre style="padding: 10px ; font-size: 0.8vw; justify-content: center; text-align: center; display: inline-flex;min-width: 100%; border-radius: 20px; background: {{ .BackColor }}; color: {{ .Color }}"> {{ .Output }}</pre>
 </html>
 
 
