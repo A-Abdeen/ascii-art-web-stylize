@@ -42,11 +42,11 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 		if strings.HasPrefix(output.Output, "400: ") {
 			http.ServeFile(w, r, "templates/error400.html")
 		}
-		t, err := template.ParseFiles("templates/template.html")
+		t, err := template.ParseFiles("templates/mainpage.html")
 		if err != nil {
 			log.Fatal(err)
 		}
-		t.ExecuteTemplate(w, "template.html", output)
+		t.ExecuteTemplate(w, "mainpage.html", output)
 	  } else {
 		fmt.Fprintf(w, "Invalid input: Only use English letters, numbers & characters")
 		http.ServeFile(w, r, "templates/error400.html")
