@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="/css/form.css">
 <form class="form" method="POST" action="/asciiart">
     <div class="inputs">
-        <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
+        <textarea name="input" id="input" placeholder="Enter text here (maximum 500 characters)" rows="5" cols="33" required="true" maxlength="500">{{ .Input }}</textarea>
         <div class="colorpicker">
             <label>Pick   AsciiArt   Color</label>
             <input type="color"; name="color"; value= {{ .Color }}>

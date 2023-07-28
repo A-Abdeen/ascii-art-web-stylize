@@ -27,6 +27,8 @@ func ErrorHandler(w http.ResponseWriter, r *http.Request, statusCode int) {
 		errorMsg = "Internal Server Error"
 	case statusCode == 418:
 		errorMsg = "The Server Refuses The Attempt To Brew Coffee With A Teapot\r\n(Use english letters only!)"
+	case statusCode == 413:
+		errorMsg = "Too many characters for this humble webapp.."
 	default:
 		errorMsg = "UNFAMILIAR ERROR WHAT DIS :("
 	}
