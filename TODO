@@ -2,7 +2,16 @@ Each of the main below need to be done in seperate branches from the develop bra
 
 # IN PROGRESS
 ## ABDN
-        HACK // ABDN
+        HACK Tweaks// ABDN
+            [ ] CSS files
+            Create file of files per template and page
+            [ ] Set input limiter
+            Frontend: html limit + Backend: error handling
+            [ ] Change error passing
+            Replace the "500: " with Sprint(StatusError)
+            [ ] button labels
+            Produce once and load from a file/variable instead of making calls everytime (use struct func?)
+
 
 ## AALI
         HACK Responsive design // AALI
@@ -13,18 +22,7 @@ Each of the main below need to be done in seperate branches from the develop bra
                 The buttons will execute the program and remain active on click
 
 # PENDING
-## FIXME button labels
-            Produce once and load from a file/variable instead of making calls everytime (use struct func?)
-## FIXME Set input limiter
-            Frontend: html limit + Backend: error handling
-## FIXME Change error passing
-            Replace the "500: " with Sprint(StatusError)
-## FIXME CSS files
-            Create file of files per template and page
-## FIXME Review Project structure (Pattern design?)
-            Can we seperate Ascii from Web and Stylize?
-## FIXME Pass served files through requests
-            Make func that declares files into variable (use struct func?)
+
 ## FIXME Review Naming Conventions
             Folders, Files, Structs, Variables and Functions
 ## FIXME Test and refactor
@@ -33,6 +31,10 @@ Each of the main below need to be done in seperate branches from the develop bra
 
         XXX Button component
             Attempt to create reusable component in Golang, is it even possible?
+        XXX Review Project structure (Pattern design?)
+            Can we seperate Ascii from Web and Stylize?
+        XXX Pass served files through requests
+            Make func that declares files into variable (use struct func?) or init?
 
 # COMPLETED
 
