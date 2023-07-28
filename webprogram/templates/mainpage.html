@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">  
     </head>
     <style>
-    html {
+html {
     font-size: 62.5%;
 }
 body {
@@ -28,68 +28,7 @@ body {
     font-size: 2.7rem;
     font-family: 'Poppins';
 }
-form {
-    margin: inherit;
-    width: inherit;
-}
-.inputs textarea {
-    margin-left: 35%;
-    margin-right: 30%;
-    width: 30%;
-    background-color:aliceblue;
-}
-.inputs .btns-row {
-    margin-top: 4px;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: normal;
-    padding: 1px;
-    margin-left: 24%; 
-    margin-right: 20%;
-}
-button {
-    background-color: rgb(228, 255, 224);
-    color: purple;
-    border: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 20px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 150px;
-    width: 320px;
-    font-size: 0.8rem;
-    font-weight: 900;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover{
-    background-color: purple;
-    color: rgb(169, 245, 162);
-    border: purple;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 1px 1px 3px black;
-    font-weight: 900;
-    cursor: pointer;
-}
-button:focus{
-    opacity: 0.4;
-    background-color: purple(175, 36, 255);
-    color: forestgreen;
-}
-.colorpicker {
-    margin-left: 40%;
-    margin-right: 35%;
-    font-size: xx-large;
-    font-family: 'Lilita One';
-    justify-content: center;
- color: forestgreen;
-}
-tbody:hover {
-    background-color: aliceblue;
-}
-.footer {
+footer {
     height: 50px;
     margin-left: 25px;
 }
@@ -103,34 +42,7 @@ tbody:hover {
             </div>
             {{ if not .Status }}
             <div>
-                <form class="form" method="POST" action="/asciiart">
-                    <div class="inputs">
-                        <textarea name="input" id="input" placeholder="Enter text here" rows="5" cols="33" required="true" >{{ .Input }}</textarea>
-                        <div class="colorpicker">
-                            <label>Pick   AsciiArt   Color</label>
-                            <input type="color"; name="color"; value= {{ .Color }}>
-                        </div>
-                        <div class="colorpicker">
-                            <label>Pick   Background   Color</label>
-                            <input type="color"; name="backColor"; value= {{ .BackColor }}>
-                        </div>
-                        <div class="btns-row">
-                            <div>
-                                <button id="standard" name="banner" value="standard" required="true">
-                                    <label for="standard"><pre style="cursor:pointer">{{ .Standard }}</pre>
-                                </button>
-
-                                <button id="shadow" name="banner" value="shadow">
-                                    <label for="shadow"><pre style="cursor:pointer">{{ .Shadow }}</pre>
-                                </button>
-
-                                <button id="thinkertoy" name="banner" value="thinkertoy">
-                                    <label for="thinkertoy"><pre style="cursor:pointer">{{ .Thinkertoy }}</pre>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                {{ template "form" .}}
                 <pre style="padding: 10px ; font-size: 0.8vw; justify-content: center; display: inline-flex;min-width: 98.9%; border-radius: 20px; background: {{ .BackColor }}; color: {{ .Color }}"> {{ .Output }}</pre>
             </div>
             {{ else }}
@@ -138,7 +50,7 @@ tbody:hover {
             {{ end }}
         </div>
     </body>
-    <footer class="footer">
+    <footer>
         <p> Copyright © {{ .Year }} Ahmed x Ahmed </p>
     </footer>
 </html>

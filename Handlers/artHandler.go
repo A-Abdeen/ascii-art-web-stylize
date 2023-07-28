@@ -12,6 +12,7 @@ import (
 func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	files := []string{
 		"templates/mainpage.html",
+		"templates/form.tmpl",
 		"templates/error.tmpl",
 	}
 

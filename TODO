@@ -8,7 +8,7 @@ Each of the main below need to be done in seperate branches from the develop bra
                 Make the header clickable and direct it to the main page
             [x] Handle all errors using templates
                 Create single HTML/tmpl file and unify error handling func
-            [ ] Form (input) Template
+            [x] Form (input) Template
                 Create file and isolate with style properties
             [ ] Output Template
                 Create file and isolate with style properties

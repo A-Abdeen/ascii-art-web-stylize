@@ -11,6 +11,7 @@ func ErrorHandler(w http.ResponseWriter, r *http.Request, statusCode int) {
 	var errorMsg string
 	files := []string{
 		"templates/mainpage.html",
+		"templates/form.tmpl",
 		"templates/error.tmpl",
 	}
 
