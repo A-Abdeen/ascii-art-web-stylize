@@ -7,10 +7,11 @@ import (
 	"net/http"
 )
 
-func MainHandler(w http.ResponseWriter, r *http.Request) {
+func BaseHandler(w http.ResponseWriter, r *http.Request) {
 	files := []string{
-		"templates/mainpage.html",
+		"templates/base.html",
 		"templates/form.tmpl",
+		"templates/output.tmpl",
 		"templates/error.tmpl",
 	}
 	if r.Method != "GET" {
@@ -33,6 +34,6 @@ func MainHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		t.ExecuteTemplate(w, "mainpage.html", examples)
+		t.ExecuteTemplate(w, "base.html", examples)
 	}
 }

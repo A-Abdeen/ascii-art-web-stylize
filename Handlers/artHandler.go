@@ -11,8 +11,9 @@ import (
 
 func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	files := []string{
-		"templates/mainpage.html",
+		"templates/base.html",
 		"templates/form.tmpl",
+		"templates/output.tmpl",
 		"templates/error.tmpl",
 	}
 
@@ -54,7 +55,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				log.Fatal(err)
 			}
-			t.ExecuteTemplate(w, "mainpage.html", output)
+			t.ExecuteTemplate(w, "base.html", output)
 		} else {
 			ErrorHandler(w, r, http.StatusTeapot)
 			return

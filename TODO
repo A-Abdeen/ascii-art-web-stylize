@@ -2,18 +2,8 @@ Each of the main below need to be done in seperate branches from the develop bra
 
 # IN PROGRESS
 ## ABDN
-        HACK Separate page elements // ABDN
-        Create header and footer template files and inject them into template and error pages
-            [x] Create header link
-                Make the header clickable and direct it to the main page
-            [x] Handle all errors using templates
-                Create single HTML/tmpl file and unify error handling func
-            [x] Form (input) Template
-                Create file and isolate with style properties
-            [ ] Output Template
-                Create file and isolate with style properties
-            [ ] Base html
-                Change mainpage html into base containing header and footer only
+        HACK // ABDN
+
 ## AALI
         HACK Responsive design // AALI
             Test the design on different screen sizes and adjust accordingly
@@ -60,7 +50,18 @@ Each of the main below need to be done in seperate branches from the develop bra
                 Output color is frontend display function
             [x] Add background color picker
                 Output background color to be changed on frontend only
-
+## [x] Separate page elements // ABDN
+            Create template files and inject them into template and error pages
+            [x] Create header link
+                Make the header clickable and direct it to the main page
+            [x] Handle all errors using templates
+                Create single HTML/tmpl file and unify error handling func
+            [x] Form (input) Template
+                Create file and isolate with style properties
+            [x] Output Template
+                Create file and isolate with style properties
+            [x] Base html
+                Change mainpage html into base containing header and footer only
 # 
 /BUG
 /HACK

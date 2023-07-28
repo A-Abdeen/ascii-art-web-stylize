@@ -10,8 +10,9 @@ import (
 func ErrorHandler(w http.ResponseWriter, r *http.Request, statusCode int) {
 	var errorMsg string
 	files := []string{
-		"templates/mainpage.html",
+		"templates/base.html",
 		"templates/form.tmpl",
+		"templates/output.tmpl",
 		"templates/error.tmpl",
 	}
 
@@ -42,5 +43,5 @@ func ErrorHandler(w http.ResponseWriter, r *http.Request, statusCode int) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	t.ExecuteTemplate(w, "mainpage.html", response)
+	t.ExecuteTemplate(w, "base.html", response)
 }

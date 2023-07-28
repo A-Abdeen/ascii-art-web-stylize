@@ -28,6 +28,19 @@ body {
     font-size: 2.7rem;
     font-family: 'Poppins';
 }
+.header a {
+    text-decoration:none;
+    color:inherit;
+}
+.header .green {
+    font-family: 'Roboto Mono';
+    color:forestgreen;
+}
+.header .purple {
+    font-family: 'Lilita One';
+    color: purple;
+    font-size: 130%;
+}
 footer {
     height: 50px;
     margin-left: 25px;
@@ -37,13 +50,13 @@ footer {
         <div class="wrapper">
             <div class="header">
                 <h3>
-                    <a style="text-decoration:none;color:inherit"  href="/">You write <span style="font-family: 'Roboto Mono';color:forestgreen;">text</span>, we draw<span style="font-family: 'Lilita One'; color: purple; font-size: 130%;"> ART </span></a>
+                    <a href="/">You write <span class="green">text</span>, we draw <span class="purple">ART</span></a>
                 </h3>
             </div>
             {{ if not .Status }}
             <div>
                 {{ template "form" .}}
-                <pre style="padding: 10px ; font-size: 0.8vw; justify-content: center; display: inline-flex;min-width: 98.9%; border-radius: 20px; background: {{ .BackColor }}; color: {{ .Color }}"> {{ .Output }}</pre>
+                {{ template "outputbox" .}}
             </div>
             {{ else }}
             {{ template "error" .}}
