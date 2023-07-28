@@ -1,17 +1,4 @@
 {{ define "outputbox" }}
-<style>
-.outputbox{
-padding: 10px;
-font-size: 0.8vw;
-justify-content: center;
-display: inline-flex;
-min-width: 98.9%;
-border-radius: 20px;
-background: {{ .BackColor }};
-color: {{ .Color }};
-}
-</style>
-<div class="outputbox">
-<pre>{{ .Output }}</pre>
-</div>
+<link rel="stylesheet" type="text/css" href="/css/output.css">
+<pre class="outputbox" style="background: {{ .BackColor }};color: {{ .Color }};">{{ .Output }}</pre>
 {{ end }}

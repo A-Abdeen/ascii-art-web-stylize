@@ -1,0 +1,21 @@
+.error-box {
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    border-color: green;
+}
+.error {
+    font-size: 0.9rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.error-msg {
+    font-size: 2em;
+}
