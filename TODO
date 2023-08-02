@@ -9,8 +9,7 @@ Each of the main below need to be done in seperate branches from the develop bra
             Frontend: html limit + Backend: error handling
             [ ] Change error passing
             Replace the "500: " with Sprint(StatusError)
-            [ ] button labels
-            Produce once and load from a file/variable instead of making calls everytime (use struct func?)
+            
 
 
 ## AALI
@@ -37,7 +36,8 @@ Each of the main below need to be done in seperate branches from the develop bra
             Make func that declares files into variable (use struct func?) or init?
 
 # COMPLETED
-
+## [x] button labels // AALI
+            Produce once and load from a file/variable instead of making calls everytime (use struct func?)
 ## [x] Change banner chooser // ABDN
             Change from radio to button
 ## [x] Implement banner sample // AALI
