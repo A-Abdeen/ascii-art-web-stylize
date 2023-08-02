@@ -30,6 +30,10 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	} else {
 		inputString := r.FormValue("input")
+		if len(inputString) > 499 { // To activate this error, use maximum allowed on frontend (500 characters)
+			ErrorHandler(w, r, http.StatusRequestEntityTooLarge)
+			return
+		}
 		if mod.IsAscii(inputString) {
 			banner := r.FormValue("banner")
 			color := r.FormValue("color")

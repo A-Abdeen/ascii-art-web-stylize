@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	styles := http.FileServer(http.Dir("./templates/css"))
+	http.Handle("/css/", http.StripPrefix("/css/", styles))
 	http.HandleFunc("/", handler.BaseHandler)
 	http.HandleFunc("/asciiart", handler.ArtHandler)
 	fmt.Printf("starting server at port 8080\n")

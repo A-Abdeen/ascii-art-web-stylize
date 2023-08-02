@@ -1,0 +1,35 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto Mono';
+    background-color:rgb(167, 191, 194);
+}
+.wrapper {
+    min-height: calc(100vh - 70px);
+    margin: 0 auto
+}
+.header {
+    align-items: center;
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: 'Poppins';
+}
+.header a {
+    text-decoration:none;
+    color:inherit;
+}
+.header .green {
+    font-family: 'Roboto Mono';
+    color:forestgreen;
+}
+.header .purple {
+    font-family: 'Lilita One';
+    color: purple;
+    font-size: 130%;
+}
+footer {
+    height: 50px;
+    margin-left: 25px;
+}
