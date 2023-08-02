@@ -2,13 +2,9 @@ Each of the main below need to be done in seperate branches from the develop bra
 
 # IN PROGRESS
 ## ABDN
-        HACK Tweaks// ABDN
-            [x] CSS files
-            Create file of files per template and page
-            [x] Set input limiter
-            Frontend: html limit + Backend: error handling
+        HACK error-handling // ABDN
             [ ] Change error passing
-            Replace the "500: " with Sprint(StatusError)
+            Improve error handling in both backend and web server
             
 
 
@@ -64,6 +60,11 @@ Each of the main below need to be done in seperate branches from the develop bra
                 Create file and isolate with style properties
             [x] Base html
                 Change mainpage html into base containing header and footer only
+## [x] Tweaks// ABDN
+            [x] CSS files
+            Create file of files per template and page
+            [x] Set input limiter
+            Frontend: html limit + Backend: error handling
 # 
 /BUG
 /HACK
