@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ascii ART</title>
+        <link rel="stylesheet" type="text/css" href="/css/base.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&family=Roboto+Mono:wght@200;400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">  
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <h3>
+                    <a href="/">You write <span class="green">text</span>, we draw <span class="purple">ART</span></a>
+                </h3>
+            </div>
+            {{ if not .Status }}
+            <div>
+                {{ template "form" .}}
+                {{ template "outputbox" .}}
+            </div>
+            {{ else }}
+            {{ template "error" .}}
+            {{ end }}
+        </div>
+    </body>
+    <footer>
+        <p> Copyright © {{ .Year }} Ahmed x Ahmed </p>
+    </footer>
+</html>

@@ -1,0 +1,29 @@
+{{ define "form" }}
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+<form class="form" method="POST" action="/asciiart">
+    <div class="inputs">
+        <textarea name="input" id="input" placeholder="Enter text here (maximum 500 characters)" rows="5" cols="33" required="true" maxlength="500">{{ .Input }}</textarea>
+        <div class="colorpicker">
+            <label>Pick   AsciiArt   Color</label>
+            <input type="color"; name="color"; value= {{ .Color }}>
+        </div>
+        <div class="colorpicker">
+            <label>Pick   Background   Color</label>
+            <input type="color"; name="backColor"; value= {{ .BackColor }}>
+        </div>
+        <div class="btns-row">
+            <div>
+                <button id="standard" name="banner" value="standard" required="true">
+                    <label for="standard"><pre style="cursor:pointer">{{ .Standard }}</pre>
+                </button>
+                <button id="shadow" name="banner" value="shadow">
+                    <label for="shadow"><pre style="cursor:pointer">{{ .Shadow }}</pre>
+                </button>
+                <button id="thinkertoy" name="banner" value="thinkertoy">
+                    <label for="thinkertoy"><pre style="cursor:pointer">{{ .Thinkertoy }}</pre>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+{{ end }}

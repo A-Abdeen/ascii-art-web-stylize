@@ -1,0 +1,9 @@
+{{ define "error" }}
+<link rel="stylesheet" type="text/css" href="/css/error.css">
+<div class="error-box">
+<div class="error">
+    <h3> Error {{ .ErrorCode }} </h3>
+    <pre class="error-msg">{{ .ErrorMsg }} </pre>
+</div>
+</div>
+{{ end }}

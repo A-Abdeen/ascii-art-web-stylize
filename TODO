@@ -1,0 +1,75 @@
+Each of the main below need to be done in seperate branches from the develop branch, then tested and merged back.
+
+# IN PROGRESS
+## ABDN
+        HACK error-handling // ABDN
+            [ ] Change error passing
+            Improve error handling in both backend and web server
+            
+
+
+## AALI
+        HACK Responsive design // AALI
+            Test the design on different screen sizes and adjust accordingly
+            [ ] Button component
+                Adjust design and size
+            [ ] Change buttons behavior
+                The buttons will execute the program and remain active on click
+
+# PENDING
+
+## FIXME Review Naming Conventions
+            Folders, Files, Structs, Variables and Functions
+## FIXME Test and refactor
+
+# ICEBOX
+
+        XXX Button component
+            Attempt to create reusable component in Golang, is it even possible?
+        XXX Review Project structure (Pattern design?)
+            Can we seperate Ascii from Web and Stylize?
+        XXX Pass served files through requests
+            Make func that declares files into variable (use struct func?) or init?
+
+# COMPLETED
+## [x] button labels // AALI
+            Produce once and load from a file/variable instead of making calls everytime (use struct func?)
+## [x] Change banner chooser // ABDN
+            Change from radio to button
+## [x] Implement banner sample // AALI
+            Export sample of each banner type and inject it as button value
+## [x] Create merge branch // ABDN
+            Experimental merging to bring all changes together and test them before merging to master
+## [x] Use one template // AALI
+            The handlers will parse and execute single HTML file to load both the main page and the results page
+## [x] Add output box // AALI
+            Create css layout for output
+            [x] Add text color picker
+                Output color is frontend display function
+            [x] Add background color picker
+                Output background color to be changed on frontend only
+## [x] Separate page elements // ABDN
+            Create template files and inject them into template and error pages
+            [x] Create header link
+                Make the header clickable and direct it to the main page
+            [x] Handle all errors using templates
+                Create single HTML/tmpl file and unify error handling func
+            [x] Form (input) Template
+                Create file and isolate with style properties
+            [x] Output Template
+                Create file and isolate with style properties
+            [x] Base html
+                Change mainpage html into base containing header and footer only
+## [x] Tweaks// ABDN
+            [x] CSS files
+            Create file of files per template and page
+            [x] Set input limiter
+            Frontend: html limit + Backend: error handling
+# 
+/BUG
+/HACK
+/FIXME
+/TODO
+/XXX
+/[ ]
+/[x]
