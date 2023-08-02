@@ -9,7 +9,7 @@
     border-color: green;
 }
 .error {
-    font-size: 0.9rem;
+    font-size: 0.9vw;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -17,5 +17,5 @@
     transform: translate(-50%, -50%);
 }
 .error-msg {
-    font-size: 2em;
+    font-size: 1vw;
 }
