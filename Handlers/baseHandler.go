@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
 func BaseHandler(w http.ResponseWriter, r *http.Request) {
@@ -21,10 +22,13 @@ func BaseHandler(w http.ResponseWriter, r *http.Request) {
 		ErrorHandler(w, r, http.StatusNotFound)
 		return
 	} else {
+		standardbanner,_ := os.ReadFile("standardbanner")
+		shadowbanner,_ := os.ReadFile("shadowbanner")
+		thinkertoybanner,_ := os.ReadFile("thinkertoybanner")
 		examples := mod.Art{
-			Standard:   mod.AsciiArt("standard", "standard"),
-			Shadow:     mod.AsciiArt("shadow", "shadow"),
-			Thinkertoy: mod.AsciiArt("thinkertoy", "thinkertoy"),
+			Standard:   string(standardbanner),
+			Shadow:     string(shadowbanner),
+			Thinkertoy: string(thinkertoybanner),
 			Input:      "",
 			Color:      "#9141ac",
 			BackColor:  "#a7bfc2",
